@@ -1,54 +1,70 @@
 
 <!DOCTYPE html>
 <head>
+  <!-- bootstrap Table -->
+  <link rel="stylesheet" href="<?php echo base_url('assets'); ?>/bootstraptable/dist/bootstrap-table.css">
+</head>
 <body>
 <h1> Manage Users </h1>
-<center><form name="frmRegister" action="." method="post">
-
-	<table  border="0" >
-		<tr><td align="right"><b>ชื่อ :</b></td>
-			<td colspan ="3"><input type="text" name="txtPhone" id="textPhone" size="30" maxlength="10"></td>
-		</tr>
-		<tr><td align="right"><b>ภาควิชา :</b></td>
-			<td colspan ="3"><input type="text" name="txtPhone" id="textPhone" size="30" maxlength="30"></td>
-		</tr>
-		<tr><td align="right"><b>คณะ :</b></td>
-			<td colspan ="3"><input type="text" name="txtUser" id="textUser" size="30" maxlength="16"></td>
-		</tr>
-		<tr><td align="right"><b>รหัสผ่าน:</b></td>
-			<td colspan ="3"><input type="password" name="txtPass" id="textPass" size="30" maxlength="15"></td>
-		</tr>
-	</table>
-	<br>
-	<br>
-	<center><input type="reset" value="Clear">&nbsp&nbsp&nbsp&nbsp&nbsp
-		<input type="submit" value="Submit" /></center>
-
-</form></center>
-<table class="table table-striped">
-  <thead>
-  
-    <tr>
-      <th scope="col">ลำดับ</th>
-      <th scope="col">ชื่อ</th>
-      <th scope="col">ภาควิชา</th>
-      <th scope="col">คณะ</th>
-      <th scope="col">รหัสผ่าน</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>Anirut</td>
-      <td>teacher Training in Electrical Engineering</td>
-      <td>Technical Education</td>
-      <td>59.247.50.58</td>     
-    </tr>
-  </tbody>
+<center>
+  <?= form_open(''); ?>
+    <table  border="0" >
+      <tr>
+        <td align="right"><b>ชื่อ :</b></td>
+        <td colspan ="3">
+          <input type="text" name="name" size="30" maxlength="10" required>
+        </td>
+      </tr>
+      <tr>
+        <td align="right"><b>ภาควิชา :</b></td>
+        <td colspan ="3">
+          <input type="text" name="department" size="30" maxlength="30" required>
+        </td>
+      </tr>
+      <tr>
+        <td align="right"><b>คณะ :</b></td>
+        <td colspan ="3">
+          <input type="text" name="factory" size="30" maxlength="20" required>
+        </td>
+      </tr>
+      <tr>
+        <td align="right"><b>รหัสผ่าน:</b></td>
+        <td colspan ="3">
+          <input type="password" name="password" size="30" maxlength="15" >
+        </td>
+      </tr>
+    </table>
+    <center style="margin-top:20px">
+      <input type="reset" value="Clear">&nbsp&nbsp&nbsp&nbsp&nbsp
+      <input type="submit" value="Submit" />
+    </center>
+  <?= form_close(); ?>
+</center>
+<table id="table" 
+  data-toolbar="#toolbar"
+  data-search="true"
+  data-icons-prefix="fa"
+  data-icons="icons"
+  data-show-refresh="true"
+  data-icons-prefix="fa"
+  data-icons="icons"
+  data-sort-name="manage_user_id" 
+  data-sort-order="asc"
+  data-pagination="true"
+  data-side-pagination="client"
+  data-page-size="10"
+  data-page-list="[10, 15, 20, 25]">
 </table>
-<br>
-    <button type="button" class="btn btn-outline-primary">Delete</button>
-    </br>
+
+
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<!-- Alert2 -->
+<script src="https://unpkg.com/sweetalert2@7.0.9/dist/sweetalert2.all.js"></script>
+<!-- Bootstrap Table -->
+<script src="<?php echo base_url('assets'); ?>/bootstraptable/dist/bootstrap-table.js"></script>
+<script src="<?php echo base_url('assets'); ?>/bootstraptable/dist/extensions/editable/bootstrap-table-editable.js"></script>
+<script src="<?php echo base_url('assets'); ?>/bootstraptable/dist/locale/bootstrap-table-th-TH.js"></script>
+<script src="<?php echo base_url('assets'); ?>/js/manage-user.js"></script>
 </body>
-</head>
 </html>
