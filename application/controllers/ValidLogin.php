@@ -12,23 +12,16 @@ class ValidLogin extends CI_Controller {
     }
     // login from login page
     public function Login(){
+            // $this->session->sess_destroy();
             $Username = $this->input->post('username');
             $Password = $this->input->post('password');
             $check = $this->model->_checkUser($Username, $Password);
             if($check){
-                ?><script>`
-                    console.log(sadasd);
-                </script><?php
-                $data = array(
-                    'username' => $Username,
-                    'Logged' => TRUE,
-                );
-                $this->session->set_userdata($data);
-                redirect('welcome');
+                $this->session->set_userdata('Logged',TRUE);
+                redirect('dashboard');
             }else{
-                $this->session->set_flashdata('msg_error', 'E-mail หรือ Password ไม่ถูกต้อง');
+                $this->session->set_flashdata('msg_error', 'Username หรือ Password ไม่ถูกต้อง');
                 $this->load->view('login');
-                
             }
-    }   
+    }
 }

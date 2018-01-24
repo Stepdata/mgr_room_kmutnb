@@ -4,10 +4,10 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
-    <meta name="author" content="จัดการผู้ใช้">
-    <meta name="keyword" content="จัดการผู้ใช้, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
+    <meta name="author" content="จัดการการใช้ห้องเรียน">
+    <meta name="keyword" content="จัดการการใช้ห้องเรียน, room manage, Admin">
 
-    <title>DASHGUM - FREE Bootstrap Admin Template</title>
+    <title>ระบบจัดการการใช้ห้องเรียน</title>
 
     <!-- Bootstrap core CSS -->
     <link href="<?= base_url("assets"); ?>/css/bootstrap.css" rel="stylesheet">
@@ -20,7 +20,6 @@
     <!-- Custom styles for this template -->
     <link href="<?= base_url("assets"); ?>/css/style.css" rel="stylesheet">
     <link href="<?= base_url("assets"); ?>/css/style-responsive.css" rel="stylesheet">
-
     <script src="<?= base_url("assets"); ?>/js/chart-master/Chart.js"></script>
     
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -29,9 +28,7 @@
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
   </head>
-
   <body>
-
   <section id="container" >
       <!-- **********************************************************************************************************************************************************
       TOP BAR CONTENT & NOTIFICATIONS
@@ -45,11 +42,11 @@
           <div id="sidebar"  class="nav-collapse ">
               <!-- sidebar menu start-->
               <ul class="sidebar-menu" id="nav-accordion">
-              	  <p class="centered"><a href="profile.html"><img src="assets/img/logo.jpg" class="img-circle" width="140" height="140"></a></p>
+              	  <p class="centered"><a href="profile.html"><img src="<?= base_url("assets"); ?>/img/logo.jpg" class="img-circle" width="140" height="140"></a></p>
               	  <h5 class="centered"></h5>
               	  	
                   <li class="mt">
-                      <a class="<?php if($_GET['page']=='home'){echo 'active';}?>" href="?page=home">
+                      <a class="<?php if($_GET['page']=='home'){echo 'active'; }?>" href="?page=home">
                             <i class="fa fa-user-circle-o" aria-hidden="true"></i>
                           <span>จัดการผู้ใช้</span>
                       </a>
@@ -70,7 +67,7 @@
                     
                   </li>
                   <li class="sub-menu">
-                      <a class="" href="index.php">
+                      <a class="" href="<?= site_url('dashboard/logout') ?>">
                         <i class="fa fa-sign-out" aria-hidden="true"></i>
                           <span>ออกจากระบบ</span>
                       </a>
@@ -82,17 +79,15 @@
           </div>
       </aside>
       <!--sidebar end-->
-      
       <!-- **********************************************************************************************************************************************************
       MAIN CONTENT
       *********************************************************************************************************************************************************** -->
       <!--main content start-->
       <section id="main-content">
           <section class="wrapper">
-
               <div class="row">
-
               <?php 
+                if($_GET["page"] != null){
                     switch($_GET["page"]) {
                         case "home":
                             include("home.php"); //หน้าแรก
@@ -106,23 +101,14 @@
                         default:
                             include("home.php"); //หน้าแรก                       
                     }
+                }else{
+                    redirect("dashboard/?page=home");
+                }
                   ?>
 
-              </div> <! --/row -->
+              </div>
           </section>
       </section>
-
-      <!--main content end-->
-      <!--footer start-->
-      <!-- <footer class="site-footer">
-          <div class="text-center">
-              2014 - Alvarez.is
-              <a href="index.html#" class="go-top">
-                  <i class="fa fa-angle-up"></i>
-              </a>
-          </div>
-      </footer> -->
-      <!--footer end-->
   </section>
 
     <!-- js placed at the end of the document so the pages load faster -->
