@@ -7,6 +7,7 @@ class Dashboard extends CI_Controller {
         $this->load->helper(array('html','url','form','date'));
 		$this->load->library(array('form_validation','session'));
 		$this->load->model('Service_genjson','model');
+		$this->load->model('CRUD','crud');
     }
     public function index(){
 		$this->load->view('dashboard');
@@ -19,6 +20,17 @@ class Dashboard extends CI_Controller {
 	{		
 		$data['data'] = $this->model->getUser();
 		$this->load->view('json/manage-user',$data);
+	}
+	// add user
+	public function addUser(){
+		$data['name'] = $this->input->post('name');
+		$data['Department'] = $this->input->post('department');
+		$data['Faculty'] = $this->input->post('factory');
+		$data['Password'] = $this->input->post('password');
+		if ($data != null){
+			$this->crud->_addUser($data);
+			redirect('welcome');
+		}
 	}
 }
 

@@ -7,12 +7,12 @@
 <body>
 <h1> Manage Users </h1>
 <center>
-  <?= form_open(''); ?>
-    <table  border="0" >
+  <?= form_open('Dashboard/addUser'); ?>
+    <table  border="0" >  
       <tr>
         <td align="right"><b>ชื่อ :</b></td>
         <td colspan ="3">
-          <input type="text" name="name" size="30" maxlength="10" required>
+          <input type="text" name="name" maxlength="10" required>
         </td>
       </tr>
       <tr>
