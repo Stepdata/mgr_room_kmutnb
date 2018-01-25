@@ -9,4 +9,8 @@ class Service_genjson extends CI_Model {
         $query = $this->db->get('manage_user')->result_array();
         return json_encode($query);
     }
+    function _callHistory(){
+        $query = $this->db->get('history')->result_array();
+        return json_encode($query);
+    }
 }

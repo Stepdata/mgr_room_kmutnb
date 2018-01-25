@@ -5,5 +5,7 @@ class CRUD extends CI_Model {
     function _addUser($data){
         $this->db->insert('manage_user',$data);
     }
-
+    function _callStatus(){
+        return $this->db->get('classroom')->result();
+    }
 }

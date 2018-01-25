@@ -55,14 +55,14 @@
                   </li>
                   
                   <li class="sub-menu">
-                      <a class="<?php if($_GET['page']=='etc'){echo 'active';} ?>" href="?page=etc" >
+                      <a class="<?php if($_GET['page']=='status'){echo 'active';} ?>" href="?page=status" >
                             <i class="fa fa-desktop"></i>
                             <span>สถานะห้องเรียน</span>
                       </a>
                   </li>
 
                   <li class="sub-menu">
-                      <a class="<?php if($_GET['page']=='plug'){echo 'active';} ?>" href="?page=plug" >  
+                      <a class="<?php if($_GET['page']=='history'){echo 'active';} ?>" href="?page=history" >  
                         <i class="fa fa-bar-chart" aria-hidden="true"></i>
                           <span>ประวัติการใช้งานห้อง</span>
                       </a>
@@ -94,11 +94,11 @@
                         case "home":
                             include("home.php"); //หน้าแรก
                         break;
-                        case "etc":
-                            include("etc.php"); //หน้าแรก
+                        case "status":
+                            include("status.php"); //หน้าแรก
                         break;
-                        case "plug":
-                            include("plug.php"); //หน้าแรก
+                        case "history":
+                            include("history.php"); //หน้าแรก
                         break;
                         default:
                             include("home.php"); //หน้าแรก                       
@@ -175,5 +175,6 @@
     <script src="<?php echo base_url('assets'); ?>/bootstraptable/dist/extensions/editable/bootstrap-table-editable.js"></script>
     <script src="<?php echo base_url('assets'); ?>/bootstraptable/dist/locale/bootstrap-table-th-TH.js"></script>
     <script src="<?php echo base_url('assets'); ?>/js/manage-user.js"></script>
+    <script src="<?php echo base_url('assets'); ?>/js/history.js"></script>
   </body>
 </html>

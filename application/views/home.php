@@ -54,8 +54,5 @@
   data-page-size="10"
   data-page-list="[10, 15, 20, 25]"> 
 </table>
-
-
-
 </body>
 </html>

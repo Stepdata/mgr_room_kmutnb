@@ -10,7 +10,8 @@ class Dashboard extends CI_Controller {
 		$this->load->model('CRUD','crud');
     }
     public function index(){
-		$this->load->view('dashboard');
+		$data['status'] = $this->crud->_callStatus();
+		$this->load->view('dashboard', $data);
 	}
 	public function logout(){
 		$this->session->sess_destroy();
@@ -19,6 +20,11 @@ class Dashboard extends CI_Controller {
 	public function getManageUser()
 	{		
 		$data['data'] = $this->model->getUser();
+		$this->load->view('json/json',$data);
+	}
+	public function getHostory()
+	{		
+		$data['data'] = $this->model->_callHistory();
 		$this->load->view('json/json',$data);
 	}
 	public function home()
@@ -36,6 +42,11 @@ class Dashboard extends CI_Controller {
 			redirect('welcome');
 		}
 	}
+	// Call Status
+	public function callStatus(){
+		$this->crud->_callStatus();
+	}
+
 }
 
 ?>

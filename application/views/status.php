@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <head>
 <body>
-<h1> Classroom status </h1>
+<h1> Classroom Status </h1>
 <table class="table">
 <thead class="thead-dark">
   <tr>
@@ -13,22 +13,15 @@
   </tr>
 </thead>
 <tbody>
+<?php foreach($status as $s){ ?>
   <tr>
-    <th scope="row">401</th>
-    <td>ON</td>
-    <td>Thitiwat</td>
-    <td>2017-11-3</td>
-    <td>12:19:13</td>
-    
+    <th scope="row"><?= $s->room ?></th>
+    <td <?php if($s->status=='OFF'){echo 'style="color:red"';}else{echo 'style="color:Green"';}?> > <?= $s->status ?></td>
+    <td><?= $s->user ?></td>
+    <td><?= $s->date ?></td>
+    <td><?= $s->time ?></td>
   </tr>
-  <tr>
-    <th scope="row">501</th>
-    <td>OFF</td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-  </tr>
+<?php } ?>
 </tbody>
 </table>
 </body>
