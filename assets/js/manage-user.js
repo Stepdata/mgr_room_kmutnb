@@ -68,7 +68,7 @@ window.actionEvents = {
           if (result.value) {
             $.ajax({
                 type:"POST",
-                url: base_url+"/registed/delregister",
+                url: base_url+"/dashboard/deluser",
                 data: {data: JSON.stringify(row)},
                 dataType: 'json'
             });
