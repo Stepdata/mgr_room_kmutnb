@@ -8,13 +8,14 @@ $(function () {
             sortable: 'true',
             valign: 'middle',
             align: 'center',
+            width: '5%',
         },{
             field: 'Name',
             title: 'ชื่อ',
             sortable: 'true',
             valign: 'middle',
             halign: 'center',
-            width: '30%',
+            width: '25%',
         }, {
             field: 'Department',
             title: 'ภาควิชา',
@@ -40,7 +41,7 @@ $(function () {
             align: 'center',
             formatter: 'actionFormatter',
             events: 'actionEvents',
-            width: '25%',
+            width: '5%',
         }]
     });
 });
@@ -68,7 +69,7 @@ window.actionEvents = {
           if (result.value) {
             $.ajax({
                 type:"POST",
-                url: base_url+"/registed/delregister",
+                url: base_url+"/dashboard/deluser",
                 data: {data: JSON.stringify(row)},
                 dataType: 'json'
             });
