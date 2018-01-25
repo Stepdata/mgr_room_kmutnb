@@ -47,6 +47,12 @@ class Dashboard extends CI_Controller {
 		$this->crud->_callStatus();
 	}
 
+	// Del user
+	public function deluser(){
+		$data = json_decode($_POST['data'],true);
+		$manage_user_id = $data['manage_user_id'];
+		$this->crud->_userdelete($manage_user_id);
+	}
 }
 
 ?>

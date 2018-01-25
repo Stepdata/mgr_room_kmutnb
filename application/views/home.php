@@ -13,34 +13,34 @@
         echo form_open('Dashboard/addUser', $attributes);
        ?>
         <div class="form-group">
-          <label class="col-sm-2 control-label"><b>ชื่อ :</b></label>
-          <div class="col-sm-10">
+          <label class="col-sm-3 control-label"><b>ชื่อ :</b></label>
+          <div class="col-sm-9">
             <input type="text" class="form-control" name="name" maxlength="10" required>
           </div>
         </div>
         <div class="form-group">
-          <label class="col-sm-2 control-label"><b>ภาควิชา :</b></label>
-          <div class="col-sm-10">
-            <input type="text" class="form-control" name="department" maxlength="30" required>
+          <label class="col-sm-3 control-label"><b>ภาควิชา :</b></label>
+          <div class="col-sm-9">
+            <input type="text" class="form-control" name="department" maxlength="20" required>
           </div>
         </div>
         <div class="form-group">
-          <label class="col-sm-2 control-label"><b>คณะ :</b></label>
-          <div class="col-sm-10">
+          <label class="col-sm-3 control-label"><b>คณะ :</b></label>
+          <div class="col-sm-9">
             <input type="text" class="form-control" name="factory" maxlength="20" required>
-          </div>
+          </div>  
         </div>
         <div class="form-group">
-          <label class="col-sm-2 control-label"><b>รหัสผ่าน:</b></label>
-          <div class="col-sm-10">
+          <label class="col-sm-3 control-label"><b>รหัสผ่าน:</b></label>
+          <div class="col-sm-9">
             <input type="password" class="form-control" name="password" maxlength="15" required>
           </div>
         </div>
         <div class="form-group">
-          <div class="col-sm-offset-2 col-sm-5">
+          <div class="col-sm-offset-3 col-sm-3">
             <button type="reset" class="btn btn-default" value="Clear">Clear</button>
           </div>
-          <div class="col-sm-5" style="text-align: right;">
+          <div class="col-sm-6 border" style="text-align:right;">
             <button type="submit" class="btn btn-primary" value="Submit">Submit</button>
           </div>
         </div>

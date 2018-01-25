@@ -41,7 +41,6 @@ $(function () {
             align: 'center',
             formatter: 'actionFormatter',
             events: 'actionEvents',
-            width: '5%',
         }]
     });
 });
@@ -84,7 +83,7 @@ window.actionEvents = {
                 }
             })
           }
-        })   
+        })
     }
 };
 window.icons = {

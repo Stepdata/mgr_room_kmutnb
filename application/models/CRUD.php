@@ -8,4 +8,9 @@ class CRUD extends CI_Model {
     function _callStatus(){
         return $this->db->get('classroom')->result();
     }
+
+    function _userdelete($manage_user_id){
+		$this->db->where('manage_user_id',$manage_user_id)->delete('manage_user');
+    }
+
 }
