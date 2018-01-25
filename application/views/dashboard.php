@@ -16,11 +16,13 @@
     <link rel="stylesheet" type="text/css" href="<?= base_url("assets"); ?>/css/zabuto_calendar.css">
     <link rel="stylesheet" type="text/css" href="<?= base_url("assets"); ?>/js/gritter/css/jquery.gritter.css" />
     <link rel="stylesheet" type="text/css" href="<?= base_url("assets"); ?>/lineicons/style.css">    
-    
+    <!-- Boostrap table -->
+    <link rel="stylesheet" href="<?php echo base_url('assets'); ?>/bootstraptable/dist/bootstrap-table.css">
     <!-- Custom styles for this template -->
     <link href="<?= base_url("assets"); ?>/css/style.css" rel="stylesheet">
     <link href="<?= base_url("assets"); ?>/css/style-responsive.css" rel="stylesheet">
     <script src="<?= base_url("assets"); ?>/js/chart-master/Chart.js"></script>
+
     
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -112,7 +114,7 @@
   </section>
 
     <!-- js placed at the end of the document so the pages load faster -->
-    <script src="<?= base_url('assets'); ?>/js/jquery.js"></script>
+    <!-- <script src="<?= base_url('assets'); ?>/js/jquery.js"></script> -->
     <script src="<?= base_url('assets'); ?>/js/jquery-1.8.3.min.js"></script>
     <script src="<?= base_url('assets'); ?>/js/bootstrap.min.js"></script>
     <script class="include" type="text/javascript" src="<?= base_url('assets'); ?>/js/jquery.dcjqaccordion.2.7.js"></script>
@@ -164,6 +166,14 @@
         }
     </script>
   
-
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script> -->
+    <!-- Alert2 -->
+    <script src="https://unpkg.com/sweetalert2@7.0.9/dist/sweetalert2.all.js"></script>
+    <!-- Bootstrap Table -->
+    <script src="<?php echo base_url('assets'); ?>/bootstraptable/dist/bootstrap-table.js"></script>
+    <script src="<?php echo base_url('assets'); ?>/bootstraptable/dist/extensions/editable/bootstrap-table-editable.js"></script>
+    <script src="<?php echo base_url('assets'); ?>/bootstraptable/dist/locale/bootstrap-table-th-TH.js"></script>
+    <script src="<?php echo base_url('assets'); ?>/js/manage-user.js"></script>
   </body>
 </html>

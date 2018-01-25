@@ -2,7 +2,6 @@
 <!DOCTYPE html>
 <head>
   <!-- bootstrap Table -->
-  <link rel="stylesheet" href="<?php echo base_url('assets'); ?>/bootstraptable/dist/bootstrap-table.css">
 </head>
 <body>
 <h1> Manage Users </h1>
@@ -53,18 +52,10 @@
   data-pagination="true"
   data-side-pagination="client"
   data-page-size="10"
-  data-page-list="[10, 15, 20, 25]">
+  data-page-list="[10, 15, 20, 25]"> 
 </table>
 
 
-<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-<!-- Alert2 -->
-<script src="https://unpkg.com/sweetalert2@7.0.9/dist/sweetalert2.all.js"></script>
-<!-- Bootstrap Table -->
-<script src="<?php echo base_url('assets'); ?>/bootstraptable/dist/bootstrap-table.js"></script>
-<script src="<?php echo base_url('assets'); ?>/bootstraptable/dist/extensions/editable/bootstrap-table-editable.js"></script>
-<script src="<?php echo base_url('assets'); ?>/bootstraptable/dist/locale/bootstrap-table-th-TH.js"></script>
-<script src="<?php echo base_url('assets'); ?>/js/manage-user.js"></script>
+
 </body>
 </html>

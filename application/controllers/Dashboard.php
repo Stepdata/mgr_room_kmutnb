@@ -19,7 +19,11 @@ class Dashboard extends CI_Controller {
 	public function getManageUser()
 	{		
 		$data['data'] = $this->model->getUser();
-		$this->load->view('json/manage-user',$data);
+		$this->load->view('json/json',$data);
+	}
+	public function home()
+	{		
+		$this->load->view('home');
 	}
 	// add user
 	public function addUser(){
