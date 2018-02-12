@@ -75,10 +75,10 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => 'sql129.main-hosting.eu',
-	'username' => 'u310435870_room',
-	'password' => '123456',
-	'database' => 'u310435870_dbmr',
+	'hostname' => 'sql129.main-hosting.eu',// 127.0.0.1 or localhost
+	'username' => 'u310435870_room', //root or admin
+	'password' => '123456', // ว่าง
+	'database' => 'u310435870_dbmr', // 
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,

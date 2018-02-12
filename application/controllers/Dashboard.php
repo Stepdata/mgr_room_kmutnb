@@ -1,7 +1,7 @@
 <?php 
 defined('BASEPATH') OR exit('No direct script access allowed');
 class Dashboard extends CI_Controller {
-
+	
 	public function __construct(){
         parent::__construct();
         $this->load->helper(array('html','url','form','date'));
@@ -10,8 +10,10 @@ class Dashboard extends CI_Controller {
 		$this->load->model('CRUD','crud');
     }
     public function index(){
+		
 		$data['status'] = $this->crud->_callStatus();
-		$this->load->view('dashboard', $data);
+		$data['status_val'] = false;
+		$this->load->view('dashboard',$data);
 	}
 	public function logout(){
 		$this->session->sess_destroy();
@@ -34,17 +36,26 @@ class Dashboard extends CI_Controller {
 	// add user
 	public function addUser(){
 		$data['name'] = $this->input->post('name');
-		$data['Department'] = $this->input->post('department');
-		$data['Faculty'] = $this->input->post('factory');
+		$data['department'] = $this->input->post('department');
+		$data['faculty'] = $this->input->post('faculty');
 		$data['Password'] = $this->input->post('password');
+		$data['card_id'] = $this->input->post('card_id');
 		if ($data != null){
 			$this->crud->_addUser($data);
 			redirect('welcome');
 		}
 	}
-	// Call Status
+	// Call Status 
 	public function callStatus(){
-		$this->crud->_callStatus();
+		$date = $this->input->post('date');
+		$time = $this->input->post('time');
+		if (isset($date)&&isset($time)){
+			$data['status'] = $this->crud->_callStatusBydate($date, $time);
+			$data['status_val'] = true;
+			$this->load->view('dashboard',$data);
+		}else{
+			// $this->load->view('dashboard',$data);
+		}
 	}
 
 	// Del user

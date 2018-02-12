@@ -1,29 +1,62 @@
 <!DOCTYPE html>
 <head>
-<body>
-<h1> Classroom Status </h1>
-<table class="table">
-<thead class="thead-dark">
-  <tr>
-    <th scope="col">ห้องเรียน</th>
-    <th scope="col">สถานะ</th>
-    <th scope="col">ผู้ใช้งาน</th>
-    <th scope="col">วันที่</th>
-    <th scope="col">เวลา</th>
-  </tr>
-</thead>
-<tbody>
-<?php foreach($status as $s){ ?>
-  <tr>
-    <th scope="row"><?= $s->room ?></th>
-    <td <?php if($s->status=='OFF'){echo 'style="color:red"';}else{echo 'style="color:Green"';}?> > <?= $s->status ?></td>
-    <td><?= $s->user ?></td>
-    <td><?= $s->date ?></td>
-    <td><?= $s->time ?></td>
-  </tr>
-<?php } ?>
-</tbody>
-</table>
-</body>
 </head>
+<body>
+  <div class="container-fluid">
+    <h1> สถานะการใช้งาน </h1>
+    <div class="row">
+    <?= form_open('Dashboard/callStatus'); ?>
+      <div class="col-md-10 col-md-offset-1">
+        <div class="row form-status">
+          <div class="col-sm-4">
+         
+            <div class="form-group">
+              <label class="inputdatetime"><b>วันที่</b></label>
+              <span class="inputdatetime">
+                <input type="text" class="date form-control" name="date" required>
+              </span>
+            </div>
+          </div>
+          <!-- /col -->
+          <div class="col-sm-4">
+            <div class="form-group">
+              <label class="inputdatetime"><b>เวลา</b></label>
+              <span class="inputdatetime">
+                <input type="text" class="time form-control" name="time" required>
+              </span>
+            </div>
+          </div>
+          <!-- /col -->
+          <div class="col-sm-2">
+            <button type="submit" class="btn btn-info">ตกลง</button>
+          </div>
+        </div>
+        <!-- /row -->
+        <?= form_close(); ?>
+        <table class="table">
+          <thead class="thead-dark">
+            <tr>
+              <th scope="col">ลำดับ</th>
+              <th scope="col">ห้องเรียน</th>
+              <th scope="col">ผู้ใช้งาน</th>
+              <th scope="col">เวลา</th>
+              <th scope="col">สถานะ</th>
+            </tr>
+          </thead>
+          <tbody>
+            <?php foreach($status as $s){ ?>
+            <tr>
+              <th scope="row"><?= $s->classroom_id ?></th>
+              <td><?= $s->room ?></td>
+              <td><?= $s->user ?></td>
+              <td><?= $s->time_start ?></td>
+              <td <?php if($s->status=='OFF'){echo 'style="color:red"';}else{echo 'style="color:Green"';}?> > <?= $s->status ?></td>
+            </tr>
+            <?php } ?>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</body>
 </html>

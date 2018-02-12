@@ -1,71 +1,105 @@
 
 <!DOCTYPE html>
 <head>
-  <!-- bootstrap Table -->
+  <title>จัดการผู้ใช้</title>
 </head>
 <body>
-<div class="container-fluid">
-<h1> Manage Users </h1>
-  <div class="row">
-    <div class="col-md-4 col-md-offset-4">
-      <?php 
-        $attributes = array('class' => 'form-horizontal');
-        echo form_open('Dashboard/addUser', $attributes);
-       ?>
-        <div class="form-group">
-          <label class="col-sm-3 control-label"><b>ชื่อ :</b></label>
-          <div class="col-sm-9">
-            <input type="text" class="form-control" name="name" maxlength="10" required>
+  <div class="container-fluid">
+    <h1> จัดการผู้ใช้ </h1>
+    <div class="row">
+      <div class="col-md-10 col-md-offset-1">
+        <?php $attributes = array('class' => 'form-horizontal'); echo form_open('Dashboard/addUser', $attributes);?>
+        <!-- start form -->
+        <div class="row form">
+          <div class="col-sm-6">
+            <div class="form-group">
+              <label for="name"><b>ชื่อ-นามสกุล</b></label>
+              <span class="input">
+                <input type="text" name="name" id="name" class="form-control" required>
+              </span>
+            </div>
+          </div>
+          <!-- /col -->
+          <div class="col-sm-6">
+            <div class="form-group">
+              <label for="name"><b>รหัสบัตร</b></label>
+              <span class="input">
+                <input type="text" name="card_id" id="card_id" class="form-control" required>
+              </span>
+            </div>
+          </div>
+          <!-- /col -->
+        </div>
+        <!-- /row -->
+        <div class="row form">
+          <div class="col-sm-6">
+            <div class="form-group">
+              <label for="name"><b>ภาควิชา</b></label>
+              <span class="input">
+                <input type="text" name="department" id="department" class="form-control" required>
+              </span>
+            </div>
+          </div>
+          <!-- /col -->
+          <div class="col-sm-6">
+            <div class="form-group">
+              <label for="name"><b>รหัสผ่าน</b></label>
+              <span class="input">
+                <input type="password" name="password" id="password" class="form-control" required>
+              </span>
+            </div>
+          </div>
+          <!-- /col -->
+        </div>
+        <!-- /row -->
+        <div class="row form">
+          <div class="col-sm-6">
+            <div class="form-group">
+              <label for="name"><b>คณะ</b></label>
+              <span class="input">
+                <input type="text" name="faculty" id="faculty" class="form-control" required>
+              </span>
+            </div>
+          </div>
+          <!-- /col -->
+        </div>
+        <!-- /row -->
+        <div class="row form">
+          <div class="col-sm-11">
+            <div class="form-group btn-center">
+              <button type="submit" class="btn btn-success">ตกลง</button>
+            </div>
+          </div>
+          <!-- /col -->
+        </div>
+        <!-- /row -->
+        <!-- end form -->
+        <?= form_close(); ?>
+        <!-- start table -->
+        <div class="row">
+          <div class="col-md-12">
+            <table id="table" 
+              data-toolbar="#toolbar"
+              data-search="true"
+              data-icons-prefix="fa"
+              data-icons="icons"
+              data-show-refresh="true"
+              data-icons-prefix="fa"
+              data-icons="icons"
+              data-sort-name="manage_user_id" 
+              data-sort-order="asc"
+              data-pagination="true"
+              data-side-pagination="client"
+              data-page-size="5"
+              data-page-list="[10, 15, 20, 25]"> 
+            </table>
           </div>
         </div>
-        <div class="form-group">
-          <label class="col-sm-3 control-label"><b>ภาควิชา :</b></label>
-          <div class="col-sm-9">
-            <input type="text" class="form-control" name="department" maxlength="20" required>
-          </div>
-        </div>
-        <div class="form-group">
-          <label class="col-sm-3 control-label"><b>คณะ :</b></label>
-          <div class="col-sm-9">
-            <input type="text" class="form-control" name="factory" maxlength="20" required>
-          </div>  
-        </div>
-        <div class="form-group">
-          <label class="col-sm-3 control-label"><b>รหัสผ่าน:</b></label>
-          <div class="col-sm-9">
-            <input type="password" class="form-control" name="password" maxlength="15" required>
-          </div>
-        </div>
-        <div class="form-group">
-          <div class="col-sm-offset-3 col-sm-3">
-            <button type="reset" class="btn btn-default" value="Clear">Clear</button>
-          </div>
-          <div class="col-sm-6 border" style="text-align:right;">
-            <button type="submit" class="btn btn-primary" value="Submit">Submit</button>
-          </div>
-        </div>
-      <?= form_close(); ?>
+        <!-- end table -->
+      </div>
+      <!-- /col -->
     </div>
+    <!-- /row -->
   </div>
-  <div class="row">
-    <div class="col-md-12">
-      <table id="table" 
-        data-toolbar="#toolbar"
-        data-search="true"
-        data-icons-prefix="fa"
-        data-icons="icons"
-        data-show-refresh="true"
-        data-icons-prefix="fa"
-        data-icons="icons"
-        data-sort-name="manage_user_id" 
-        data-sort-order="asc"
-        data-pagination="true"
-        data-side-pagination="client"
-        data-page-size="10"
-        data-page-list="[10, 15, 20, 25]"> 
-      </table>
-    </div>
-  </div>
-</div>
 </body>
 </html>
