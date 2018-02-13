@@ -197,7 +197,7 @@
     // initialize input widgets first
     $('#child-hist .time-time').timepicker({
         'showDuration': true,
-        'timeFormat': 'g:ia'
+        'timeFormat': 'H:i:s'
     });
 
     $('#child-hist .date-time').datepicker({

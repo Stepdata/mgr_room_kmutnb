@@ -37,6 +37,10 @@ class CRUD extends CI_Model {
         ->where('date_time <=',$date_end)
         ->get('history')
         ->result();
-        return $query;
+        if($query){
+            return $query;
+        }else{
+            return false;
+        }
     }
 }

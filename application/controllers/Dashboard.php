@@ -36,12 +36,21 @@ class Dashboard extends CI_Controller {
 		$time_start = $this->input->post('time_start');
 		$time_end = $this->input->post('time_end');
 		$date_end = $this->input->post('date_end');
-		if($mode == "now"){
-			$data = $this->crud->_callHistoryNow();
-			$this->session->set_flashdata('hist', $data);
-			$this->load->view('dashboard',$data);
+		if($mode != "now"){
+			if($date_start&&$time_start&&$time_end&&$date_end){
+				$data = $this->crud->_callHistoryBy($date_start, $time_start, $time_end, $date_end);
+				if($data){
+					$this->session->set_flashdata('hist', $data);
+					$this->load->view('dashboard',$data);
+				}else{
+					echo "<script type='text/javascript'>alert('ไม่มีข้อมูล');</script>";
+					$data = $this->crud->_callHistory();
+					$this->session->set_flashdata('hist', $data);
+					$this->load->view('dashboard',$data);
+				}
+			}
 		}else{
-			$data = $this->crud->_callHistoryBy($date_start, $time_start, $time_end, $date_end);
+			$data = $this->crud->_callHistoryNow();
 			$this->session->set_flashdata('hist', $data);
 			$this->load->view('dashboard',$data);
 		}
