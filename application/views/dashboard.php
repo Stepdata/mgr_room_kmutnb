@@ -91,7 +91,7 @@
           <section class="wrapper">
               <div class="row">
               <?php 
-                if($_GET["page"] != null && $status_val==false){
+                if($_GET["page"] != null){
                     switch($_GET["page"]) {
                         case "home":
                             include("home.php"); //หน้าแรก
@@ -105,8 +105,10 @@
                         default:
                             include("home.php"); //หน้าแรก                       
                     }
-                }else if($status_val==true){
+                }else if($this->session->flashdata('status')){
                     redirect("dashboard/?page=status");
+                }else if($this->session->flashdata('hist')){
+                    redirect("dashboard/?page=history");
                 }
                 else{
                     redirect("dashboard/?page=home");

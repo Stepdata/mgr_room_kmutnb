@@ -10,10 +10,15 @@ class Dashboard extends CI_Controller {
 		$this->load->model('CRUD','crud');
     }
     public function index(){
-		
-		$data['status'] = $this->crud->_callStatus();
-		$data['status_val'] = false;
-		$this->load->view('dashboard',$data);
+		if($this->session->flashdata('status')||$this->session->flashdata('hist')){
+			$data['status'] = $this->session->flashdata('status');
+			$data['history'] = $this->session->flashdata('hist');
+			$this->load->view('dashboard',$data);
+		}else{
+			$data['status'] = $this->crud->_callStatus();
+			$data['history'] = $this->crud->_callHistory();
+			$this->load->view('dashboard',$data);
+		}
 	}
 	public function logout(){
 		$this->session->sess_destroy();
@@ -24,14 +29,22 @@ class Dashboard extends CI_Controller {
 		$data['data'] = $this->model->getUser();
 		$this->load->view('json/json',$data);
 	}
-	public function getHostory()
-	{		
-		$data['data'] = $this->model->_callHistory();
-		$this->load->view('json/json',$data);
-	}
-	public function home()
-	{		
-		$this->load->view('home');
+	public function getHostoryBy()
+	{
+		$mode = $this->input->post('date');
+		$date_start = $this->input->post('date_start');
+		$time_start = $this->input->post('time_start');
+		$time_end = $this->input->post('time_end');
+		$date_end = $this->input->post('date_end');
+		if($mode == "now"){
+			$data = $this->crud->_callHistoryNow();
+			$this->session->set_flashdata('hist', $data);
+			$this->load->view('dashboard',$data);
+		}else{
+			$data = $this->crud->_callHistoryBy($date_start, $time_start, $time_end, $date_end);
+			$this->session->set_flashdata('hist', $data);
+			$this->load->view('dashboard',$data);
+		}
 	}
 	// add user
 	public function addUser(){
@@ -50,11 +63,16 @@ class Dashboard extends CI_Controller {
 		$date = $this->input->post('date');
 		$time = $this->input->post('time');
 		if (isset($date)&&isset($time)){
-			$data['status'] = $this->crud->_callStatusBydate($date, $time);
-			$data['status_val'] = true;
+			$data = $this->crud->_callStatusBydate($date, $time);
+			$this->session->set_flashdata('status', $data);
 			$this->load->view('dashboard',$data);
-		}else{
-			// $this->load->view('dashboard',$data);
+		}
+	}
+	// debug
+	public function debug($date, $time){
+		if (isset($date)&&isset($time)){
+			$data['statu_by'] = $this->crud->_callStatusBydate($date, $time);
+			$this->load->view('json/debug',$data);
 		}
 	}
 

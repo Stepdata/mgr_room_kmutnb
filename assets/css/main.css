@@ -480,6 +480,7 @@ input.text {
 }
 label.inputdatetime{
   margin-top: 10px;
+  margin-bottom: 10px;
   text-align: right;
   float:left;
 }
@@ -514,4 +515,7 @@ input.time-time{
 }
 input:focus { 
   background-color:#999999;
+}
+.mar-top-10{
+  margin-top: 10px
 }
