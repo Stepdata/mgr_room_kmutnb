@@ -91,6 +91,21 @@ class Dashboard extends CI_Controller {
 		$manage_user_id = $data['manage_user_id'];
 		$this->crud->_userdelete($manage_user_id);
 	}
+
+	public function getUid($room, $uid){
+
+		// $data['statu_by'] = $uid;
+		// $data['statu_by'] = $uid;
+		if($uid&&$room ){
+			$this->crud->_checkUid_User($room, $uid);
+		} else{
+			// error
+		}
+
+		// debug
+		// $this->load->view("json/debug",$data);
+	}
+
 }
 
 ?>
