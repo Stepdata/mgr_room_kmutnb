@@ -29,6 +29,16 @@ class Dashboard extends CI_Controller {
 		$data['data'] = $this->model->getUser();
 		$this->load->view('json/json',$data);
 	}
+	public function getHostory()
+	{		
+		$data['data'] = $this->model->getHist();
+		$this->load->view('json/json',$data);
+	}
+	public function getStatus()
+	{		
+		$data['data'] = $this->model->getStatus();
+		$this->load->view('json/json',$data);
+	}
 	public function getHostoryBy()
 	{
 		$mode = $this->input->post('date');
@@ -52,7 +62,7 @@ class Dashboard extends CI_Controller {
 		}else{
 			$data = $this->crud->_callHistoryNow();
 			$this->session->set_flashdata('hist', $data);
-			$this->load->view('dashboard',$data);
+			$this->load->view('json/json',$data);
 		}
 	}
 	// add user

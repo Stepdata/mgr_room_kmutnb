@@ -6,8 +6,8 @@
     <h1> สถานะการใช้งาน </h1>
     <div class="row">
     <?= form_open('Dashboard/callStatus'); ?>
-      <div class="col-md-10 col-md-offset-1">
-        <div class="row form-status">
+     <div class="col-md-10 col-md-offset-1">
+       <!--   <div class="row form-status">
           <div class="col-sm-4">
          
             <div class="form-group">
@@ -17,7 +17,6 @@
               </span>
             </div>
           </div>
-          <!-- /col -->
           <div class="col-sm-4">
             <div class="form-group">
               <label class="inputdatetime"><b>เวลา</b></label>
@@ -26,14 +25,13 @@
               </span>
             </div>
           </div>
-          <!-- /col -->
           <div class="col-sm-2">
             <button type="submit" class="btn btn-info">ค้นหา</button>
           </div>
-        </div>
+        </div> -->
         <!-- /row -->
         <?= form_close(); ?>
-        <table class="table" border="1">
+        <!-- <table class="table" border="1">
           <thead class="thead-dark">
             <tr>
               <th scope="col">ลำดับ</th>
@@ -57,7 +55,23 @@
             </tr>
             <?php } ?>
           </tbody>
-        </table>
+        </table> -->
+        <table id="tableStatus" 
+              data-toolbar="#toolbar"
+              data-search="true"
+              data-icons-prefix="fa"
+              data-icons="icons"
+              data-show-refresh="true"
+              data-icons-prefix="fa"
+              data-icons="icons"
+              data-sort-name="history_id" 
+              data-sort-order="asc"
+              data-ajax-options="status"
+              data-pagination="true"
+              data-side-pagination="client"
+              data-page-size="5"
+              data-page-list="[10, 15, 20, 25]"> 
+            </table>
       </div>
     </div>
   </div>
