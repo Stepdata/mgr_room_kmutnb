@@ -35,7 +35,7 @@
     <!-- /row -->
     <div class="row">
       <div class="col">
-        <table class="table">
+        <!-- <table class="table">
           <thead class="thead-dark">
             <tr>
               <th scope="col">ลำดับ</th>
@@ -56,9 +56,25 @@
               <td><?= $his->start_time ?></td>
               <td><?= $his->end_time ?></td>
             </tr>
-            <?php } ?>
+            <?php 
+          } ?>
           </tbody>
-        </table>
+        </table> -->
+        <table id="tableHistory" 
+              data-toolbar="#toolbar"
+              data-search="true"
+              data-icons-prefix="fa"
+              data-icons="icons"
+              data-show-refresh="true"
+              data-icons-prefix="fa"
+              data-icons="icons"
+              data-sort-name="history_id" 
+              data-sort-order="desc"
+              data-pagination="true"
+              data-side-pagination="client"
+              data-page-size="10"
+              data-page-list="[15, 20, 50, 30]"> 
+            </table>
       </div>
       <!-- /col -->
     </div>
