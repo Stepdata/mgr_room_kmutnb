@@ -10,71 +10,35 @@
         <!-- /col -->
       </div>
       <!-- /row -->
-    <?= form_open('Dashboard/getHostoryBy'); ?>
-    <div class="row" > 
-      <div class="date-histroy form-group">
-        <div class="col-sm-12">
-          <div class="row">
-            <input type="radio" name="date" value="now" id="date"> วันนี้
-          </div>
-          <div class="row" id="child-hist">
-            <input type="radio" name="date" id="date" > วันที่
-              <input type="text" class="date-time start" name="date_start" />
-              <input type="text" class="time-time start" name="time_start" /> ถึง
-              <input type="text" class="time-time end" name="time_end" />
-              <input type="text" class="date-time end" name="date_end" />
-          </div>
-        </div>
-      </div>
-      <!-- /col -->
-      <div class="col-sm-2 mar-top-10">
-        <button type="submit" class="btn btn-info">ตกลง</button>
-      </div>
-    </div>
-    <?= form_close(); ?>
+    
     <!-- /row -->
     <div class="row">
       <div class="col">
-        <!-- <table class="table">
-          <thead class="thead-dark">
-            <tr>
-              <th scope="col">ลำดับ</th>
-              <th scope="col">ห้องเรียน</th>
-              <th scope="col">ผู้ใช้งาน</th>
-              <th scope="col">วันที่</th>
-              <th scope="col">เวลาเริ่ม</th>
-              <th scope="col">เวลาสุด</th>
-            </tr>
-          </thead>
-          <tbody>
-            <?php foreach($history as $his){ ?>
-            <tr>
-              <th scope="row"><?= $his->history_id ?></th>
-              <td><?= $his->room ?></td>
-              <td><?= $his->name_user ?></td>
-              <td><?= $his->date_time ?></td>
-              <td><?= $his->start_time ?></td>
-              <td><?= $his->end_time ?></td>
-            </tr>
-            <?php 
-          } ?>
-          </tbody>
-        </table> -->
         <table id="tableHistory" 
-              data-toolbar="#toolbar"
+              data-toggle="table"
               data-search="true"
-              data-icons-prefix="fa"
-              data-icons="icons"
-              data-show-refresh="true"
-              data-icons-prefix="fa"
-              data-icons="icons"
-              data-sort-name="history_id" 
               data-sort-order="desc"
+              data-ajax-options="status"
+              data-sort-name="history_id" 
               data-pagination="true"
               data-side-pagination="client"
               data-page-size="10"
-              data-page-list="[15, 20, 50, 30]"> 
-            </table>
+              data-page-list="[20, 25, 30, 35]"
+              data-url= <?php echo (base_url()."dashboard/getHostory")?>
+              data-filter-control="true"
+              data-filter-show-clear="true"
+              >
+                <thead>
+                <tr>
+                    <th data-field="history_id" data-sortable="true">ลำดับ</th>
+                    <th data-field="room" data-filter-control="select" data-sortable="true">ห้อง</th>
+                    <th data-field="date_time" data-filter-control="select" data-sortable="true">วันที่</th>
+                    <th data-field="start_time" data-filter-control="select" data-sortable="true">เวลาเริ่ม</th>
+                    <th data-field="end_time" data-filter-control="select" data-sortable="true">เวลาสิ้นสุด</th>
+                    <th data-field="name_user" data-filter-control="select" data-sortable="true">ผู้ใช้</th>
+                </tr>
+                </thead>
+          </table>
       </div>
       <!-- /col -->
     </div>

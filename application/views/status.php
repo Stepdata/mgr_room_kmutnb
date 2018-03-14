@@ -64,7 +64,7 @@
               data-show-refresh="true"
               data-icons-prefix="fa"
               data-icons="icons"
-              data-sort-name="history_id" 
+              data-sort-name="classroom_id" 
               data-sort-order="asc"
               data-ajax-options="status"
               data-pagination="true"
