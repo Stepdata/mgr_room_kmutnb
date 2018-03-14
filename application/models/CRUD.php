@@ -61,22 +61,23 @@ class CRUD extends CI_Model {
                 $this->_insertHistory($check_uid_retune_name->name, $room);
 
                 // response
-                $data['statu_error'] ="ON";
+                $data['statu_error'] = 0;
                 $this->load->view("json/debug",$data );
             }else if($this->_check_uid_retune_name($room) == $check_uid_retune_name->name){
                 $this->db->set('status', "OFF");
                 $this->db->set('user', "-");
+                $this->db->set('time_start');
                 $this->db->where('room', $room);
                 $this->db->update('classroom');
 
                 $this->_updateHistory($check_uid_retune_name->name, $room);
 
                 // response
-                $data['statu_error'] = 'OFF';
+                $data['statu_error'] = 1;
                 $this->load->view("json/debug",$data );
             }else{
                 // response
-                $data['statu_error'] = 'Fail';
+                $data['statu_error'] = 3;
                 $this->load->view("json/debug",$data );
             } // else
         } // end if

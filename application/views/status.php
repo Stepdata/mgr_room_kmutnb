@@ -28,12 +28,12 @@
           </div>
           <!-- /col -->
           <div class="col-sm-2">
-            <button type="submit" class="btn btn-info">ตกลง</button>
+            <button type="submit" class="btn btn-info">ค้นหา</button>
           </div>
         </div>
         <!-- /row -->
         <?= form_close(); ?>
-        <table class="table">
+        <table class="table" border="1">
           <thead class="thead-dark">
             <tr>
               <th scope="col">ลำดับ</th>
@@ -50,7 +50,10 @@
               <td><?= $s->room ?></td>
               <td><?= $s->user ?></td>
               <td><?= $s->time_start ?></td>
-              <td <?php if($s->status=='OFF'){echo 'style="color:red"';}else{echo 'style="color:Green"';}?> > <?= $s->status ?></td>
+              <td><?php 
+              if($s->status=='OFF'){echo '<div style="width: 15px;height: 15px;background: red;-moz-border-radius: 13px;-webkit-border-radius: 13px;border-radius: 50px;">';}
+              else{echo '<div style="width: 15px;height: 15px;background: green;-moz-border-radius: 13px;-webkit-border-radius: 13px;border-radius: 50px;">';}?>
+              </td>
             </tr>
             <?php } ?>
           </tbody>

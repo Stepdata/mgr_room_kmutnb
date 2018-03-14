@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/css/bootstrap-datepicker.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/timepicker@1.11.12/jquery.timepicker.min.css">
     <link rel="stylesheet" type="text/css" href="<?= base_url("assets"); ?>/css/main.css">
-    <link rel="stylesheet" type="text/css" href="<?= base_url("assets"); ?>/js/gritter/css/jquery.gritter.css" />
+    <!-- <link rel="stylesheet" type="text/css" href="<?= base_url("assets"); ?>/js/gritter/css/jquery.gritter.css" /> -->
     <link rel="stylesheet" type="text/css" href="<?= base_url("assets"); ?>/lineicons/style.css">    
     <link rel="stylesheet" type="text/css" href="<?= base_url("assets"); ?>/css/style-responsive.css"> 
     <!-- Boostrap table -->
@@ -127,15 +127,12 @@
 <script class="include" type="text/javascript" src="<?= base_url('assets'); ?>/js/jquery.dcjqaccordion.2.7.js"></script>
 <script src="<?= base_url('assets'); ?>/js/jquery.scrollTo.min.js"></script>
 <script src="<?= base_url('assets'); ?>/js/jquery.nicescroll.js" type="text/javascript"></script>
-<script src="<?= base_url('assets'); ?>/js/jquery.sparkline.js"></script>
+<!-- <script src="<?= base_url('assets'); ?>/js/jquery.sparkline.js"></script> -->
 <!--common script for all pages-->
 <script src="<?= base_url('assets'); ?>/js/common-scripts.js"></script>
 
-<script type="text/javascript" src="<?= base_url('assets'); ?>/js/gritter/js/jquery.gritter.js"></script>
-<script type="text/javascript" src="<?= base_url('assets'); ?>/js/gritter-conf.js"></script>
-
 <!--script for this page-->
-<script src="<?= base_url('assets'); ?>/js/sparkline-chart.js"></script>    
+<!-- <script src="<?= base_url('assets'); ?>/js/sparkline-chart.js"></script>     -->
 <script src="<?= base_url('assets'); ?>/js/zabuto_calendar.js"></script>	
 
 <!-- Alert2 -->
