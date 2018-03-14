@@ -103,13 +103,10 @@ class Dashboard extends CI_Controller {
 	}
 
 	public function getUid($room, $uid){
-
-		// $data['statu_by'] = $uid;
-		// $data['statu_by'] = $uid;
 		if($uid&&$room ){
 			$this->crud->_checkUid_User($room, $uid);
 		} else{
-			// error
+			$this->load->view('error/html/error_404');
 		}
 
 		// debug

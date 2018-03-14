@@ -24,7 +24,7 @@
     <!-- Custom styles for this template -->
     <link href="<?= base_url("assets"); ?>/css/style.css" rel="stylesheet">
     <link href="<?= base_url("assets"); ?>/css/style-responsive.css" rel="stylesheet">
-    
+    <link href="<?= base_url("assets"); ?>/bootstraptable/bootstrap-table-filter-control.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.2/css/select2.min.css" />
     
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -146,7 +146,9 @@
 <script src="<?php echo base_url('assets'); ?>/bootstraptable/dist/extensions/editable/bootstrap-table-editable.js"></script>
 <script src="<?php echo base_url('assets'); ?>/bootstraptable/dist/locale/bootstrap-table-th-TH.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.2/js/select2.min.js"></script>
-<script src="<?php echo base_url('assets'); ?>/bootstraptable/bootstrap-table-select2-filter.js"></script>
+<!-- <script src="<?php echo base_url('assets'); ?>/bootstraptable/bootstrap-table-select2-filter.js"></script> -->
+<script src="<?php echo base_url('assets'); ?>/bootstraptable/dist/extensions/filter-control/bootstrap-table-filter-control.js"></script>
+<script src="<?php echo base_url('assets'); ?>/bootstraptable/dist/extensions/multiple-sort/bootstrap-table-multiple-sort.js"></script>
 
 <!-- data -->
 <script src="<?php echo base_url('assets'); ?>/js/manage-user.js"></script>

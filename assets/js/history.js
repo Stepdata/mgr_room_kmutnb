@@ -1,6 +1,6 @@
 var base_url = window.location.origin+'/manage-room';
 
-$(function() {
+// $(function() {
     // function getNumberFilterTemplate(fieldId) {
     //   var numberFilterClass = 'numberFilter-' + fieldId,
     //     template = function(bootstrapTable, col, isVisible) {
@@ -37,9 +37,69 @@ $(function() {
     //   return template;
     // }
 
-    var options = {
+    // var options = {
+    //     url: base_url+'/dashboard/getHostory',
+    //   columns: [{
+    //         field: 'history_id',
+    //         title: 'ลำดับ',
+    //         sortable: 'true',
+    //         valign: 'middle',
+    //         align: 'center',
+    //     },{
+    //         field: 'room',
+    //         title: 'ห้อง',
+    //         sortable: 'true',
+    //         valign: 'middle',
+    //         halign: 'center',
+    //     }, {
+    //         field: 'date_time',
+    //         title: 'วันที่',
+    //         sortable: 'true',
+    //         valign: 'middle',
+    //         align: 'center',
+    //     },{
+    //         field: 'start_time',
+    //         title: 'เวลาเริ่ม',
+    //         sortable: 'true',
+    //         valign: 'middle',
+    //         align: 'center',
+    //         filter: {
+    //             type: "input"
+    //         }
+    //     },{
+    //         field: 'end_time',
+    //         title: 'เวลาสิ้นสุด',
+    //         sortable: 'true',
+    //         valign: 'middle',
+    //         align: 'center',
+    //     },{
+    //         field: 'name_user',
+    //         title: 'ผู้ใช้',
+    //         sortable: 'true',
+    //         valign: 'middle',
+    //         align: 'center',
+    //     }],
+    //     filter: true,
+    //     filterTemplate: {
+    //         input: function(bootstrapTable, column, isVisible) {
+    //         return '<input type="text" class="form-control input-sm" data-filter-field="' + column.field + '" style="width: 100%; visibility:' + isVisible + '">';
+    //         }
+    //     }
+    // };
+    // var $table = $("#tableHistory").bootstrapTable(options);
+    // $table.bootstrapTable("setSelect2Data", "", ["", "item 1", "item 2", "item 3"]);
+//   });
+
+
+
+
+
+
+// เก็บไว้
+$(function () {
+    $('#tableHistory').bootstrapTable({
         url: base_url+'/dashboard/getHostory',
-      columns: [{
+        columns: [{
             field: 'history_id',
             title: 'ลำดับ',
             sortable: 'true',
@@ -65,8 +125,8 @@ $(function() {
             align: 'center',
             filter: {
                 type: "select",
-                data: ["", "0", "1", "2"]
-            }
+                data: []
+              }
         },{
             field: 'end_time',
             title: 'เวลาสิ้นสุด',
@@ -83,72 +143,11 @@ $(function() {
         filter: true,
         filterTemplate: {
             input: function(bootstrapTable, column, isVisible) {
-            return '<input type="text" class="form-control input-sm" data-filter-field="' + column.field + '" style="width: 100%; visibility:' + isVisible + '">';
+              return '<input type="text" class="form-control input-sm" data-filter-field="' + column.field + '" style="width: 100%; visibility:' + isVisible + '">';
             }
         }
-    };
-    var $table = $("#tableHistory").bootstrapTable(options);
-    // $table.bootstrapTable("setSelect2Data", "", ["", "item 1", "item 2", "item 3"]);
-  });
-
-
-
-
-
-
-// เก็บไว้
-// $(function () {
-//     $('#tableHistory').bootstrapTable({
-//         url: base_url+'/dashboard/getHostory',
-//         columns: [{
-//             field: 'history_id',
-//             title: 'ลำดับ',
-//             sortable: 'true',
-//             valign: 'middle',
-//             align: 'center',
-//         },{
-//             field: 'room',
-//             title: 'ห้อง',
-//             sortable: 'true',
-//             valign: 'middle',
-//             halign: 'center',
-//         }, {
-//             field: 'date_time',
-//             title: 'วันที่',
-//             sortable: 'true',
-//             valign: 'middle',
-//             align: 'center',
-//         },{
-//             field: 'start_time',
-//             title: 'เวลาเริ่ม',
-//             sortable: 'true',
-//             valign: 'middle',
-//             align: 'center',
-//             filter: {
-//                 type: "select",
-//                 data: []
-//               }
-//         },{
-//             field: 'end_time',
-//             title: 'เวลาสิ้นสุด',
-//             sortable: 'true',
-//             valign: 'middle',
-//             align: 'center',
-//         },{
-//             field: 'name_user',
-//             title: 'ผู้ใช้',
-//             sortable: 'true',
-//             valign: 'middle',
-//             align: 'center',
-//         }],
-//         filter: true,
-//         filterTemplate: {
-//             input: function(bootstrapTable, column, isVisible) {
-//               return '<input type="text" class="form-control input-sm" data-filter-field="' + column.field + '" style="width: 100%; visibility:' + isVisible + '">';
-//             }
-//         }
-//     });
-// });
-// window.icons = {
-//         refresh: 'fa-refresh'
-// };
+    });
+});
+window.icons = {
+        refresh: 'fa-refresh'
+};
