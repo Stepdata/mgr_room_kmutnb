@@ -68,6 +68,7 @@ class CRUD extends CI_Model {
                 $this->db->set('status', "OFF");
                 $this->db->set('user', "-");
                 $this->db->set('time_start');
+                $this->db->set('date_start');
                 $this->db->where('room', $room);
                 $this->db->update('classroom');
 
