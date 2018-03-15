@@ -58,6 +58,7 @@ function statusFormatter(value, row, index) {
     }
 }
 
+
 window.icons = {
         refresh: 'fa-refresh'
 };

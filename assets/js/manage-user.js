@@ -49,6 +49,7 @@ $(function () {
     });
 });
 
+
 function actionFormatter(value, row, index) {
     return [
         '<a class="btn btn-danger del" href="javascript:void(0)" title="Delete">',
