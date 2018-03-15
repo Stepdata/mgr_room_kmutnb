@@ -1,7 +1,8 @@
 <?php
-// print_r($statu_by);
-$i = (int)$statu_error;
-// echo ($i);
+$status = (int)$statu_error;
 echo ("status=");
-echo ($i);
+echo ($status);
+echo (" ");
+echo ("id=");
+echo ((double)$statu_id_pass);
 ?>

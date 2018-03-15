@@ -62,6 +62,7 @@ class CRUD extends CI_Model {
 
                 // response
                 $data['statu_error'] = 0;
+                $data['statu_id_pass'] = $this->getPass($uid)->password;
                 $this->load->view("json/debug",$data );
             }else if($this->_check_uid_retune_name($room) == $check_uid_retune_name->name){
                 $this->db->set('status', "OFF");
@@ -74,10 +75,12 @@ class CRUD extends CI_Model {
 
                 // response
                 $data['statu_error'] = 1;
+                $data['statu_id_pass'] = $this->getPass($uid)->password;
                 $this->load->view("json/debug",$data );
             }else{
                 // response
                 $data['statu_error'] = 3;
+                $data['statu_id_pass'] = $this->getPass($uid)->password;
                 $this->load->view("json/debug",$data );
             } // else
         } // end if
@@ -113,5 +116,11 @@ class CRUD extends CI_Model {
         ->where('room', $room)
         ->limit(1)
         ->order_by('history_id',"DESC")->get("history")->row();
+    }
+    private function getPass($uid){
+        return $this->db
+        ->select('password')
+        ->where('card_id',$uid)
+        ->get('manage_user')->row();
     }
 }

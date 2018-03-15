@@ -9,6 +9,13 @@ $(function () {
             sortable: 'true',
             valign: 'middle',
             align: 'center',
+        },
+        {
+            field: 'room',
+            title: 'ห้อง',
+            sortable: 'true',
+            valign: 'middle',
+            halign: 'center',
         },{
             field: 'user',
             title: 'ผู้ใช้',

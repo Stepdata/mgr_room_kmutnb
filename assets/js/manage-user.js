@@ -16,7 +16,7 @@ $(function () {
             halign: 'center',
         },{
             field: 'password',
-            title: 'รหัสผ่าน',
+            title: 'รหัสประจำตัว',
             sortable: 'true',
             valign: 'middle',
             halign: 'center'
