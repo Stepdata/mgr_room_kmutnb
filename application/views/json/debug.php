@@ -1,4 +1,7 @@
 <?php
 // print_r($statu_by);
-
-echo("status = " . $statu_error);
+$i = (int)$statu_error;
+// echo ($i);
+echo ("status=");
+echo ($i);
+?>
