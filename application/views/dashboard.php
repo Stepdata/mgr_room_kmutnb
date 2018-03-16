@@ -47,7 +47,7 @@
           <div id="sidebar"  class="nav-collapse ">
               <!-- sidebar menu start-->
               <ul class="sidebar-menu" id="nav-accordion">
-              	  <p class="centered"><a href="profile.html"><img src="<?= base_url("assets"); ?>/img/logo.jpg" class="img-circle" width="140" height="140"></a></p>
+              	  <p class="centered"><img src="<?= base_url("assets"); ?>/img/logo.jpg" class="img-circle" width="140" height="140"></p>
               	  <h5 class="centered"></h5>
               	  	
                   <li class="mt">
