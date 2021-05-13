@@ -1,7 +1,1 @@
-# README #
-
-This README would normally document whatever steps are necessary to get your application up and running.
-
-### What is this repository for? ###
-
-Project Manage Room user with Samrt Class Room
+ระบบจองห้องเรียนโดยใช้งานโดยการสแกนบัตรนักศึกษา ใช้งานร่วมกับระบบ Arduino ควบคุมการใช้งานไฟฟ้าแลอุปกรณ์ต่างๆ
