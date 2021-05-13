@@ -13,7 +13,7 @@ class ValidLogin extends CI_Controller {
     // login from login page
     public function Login(){
             // $this->session->sess_destroy();
-            $Username = $this->input->post('username');
+            $Username = $this->input->post('username'); 
             $Password = $this->input->post('password');
             $check = $this->model->_checkUser($Username, $Password);
             if($check){

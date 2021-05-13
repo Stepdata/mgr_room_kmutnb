@@ -43,7 +43,7 @@
           <!-- /col -->
           <div class="col-sm-6">
             <div class="form-group">
-              <label for="name"><b>รหัสผ่าน</b></label>
+              <label for="name"><b>รหัสประจำตัว</b></label>
               <span class="input">
                 <input type="password" name="password" id="password" class="form-control" required>
               </span>
